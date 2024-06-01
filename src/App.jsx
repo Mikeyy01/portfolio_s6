@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import Preloader from './Preloader';
 import './homepage.css';
 import './fonts.css';
+import initializeBlobity from './blobityConfig';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,13 @@ const App = () => {
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.8, stagger: 0.2 }
       );
+
+      // Initialize Blobity using the setup function
+      const blobity = initializeBlobity();
+
+      return () => {
+        blobity.destroy();
+      };
     }
   }, [loading]);
 
@@ -43,11 +51,11 @@ const App = () => {
             <div ref={contentRef}>
               <section className="section1" ref={sectionRef}>
                 <div className="top-left">
-                  <button className="resume-button">VIEW RESUME</button>
+                  <button className="resume-button" data-blobity>VIEW RESUME</button>
                 </div>
                 <div className="top-right">
-                  <a href="" className="social-link">GITHUB</a>
-                  <a href="" className="social-link">LINKEDIN</a>
+                  <a href="https://github.com" className="social-link" data-blobity>GITHUB</a>
+                  <a href="https://linkedin.com" className="social-link" data-blobity>LINKEDIN</a>
                 </div>
                 <div className="content">
                   <h1 ref={headingRef}>MICHAEL<br />ASLANIDIS</h1>
