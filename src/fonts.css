@@ -12,3 +12,10 @@
     font-weight: 900; /* Specify the correct weight for the Black variant */
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Mona Sans Expanded Bold';
+    src: url('./assets/fonts/MonaSansExpanded-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}

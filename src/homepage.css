@@ -3,11 +3,12 @@ body {
     padding: 0;
 }
 
-.port{
+.port {
     background-color: #09090D;
 }
 
 .section1 {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,18 +22,92 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 h1 {
     font-family: 'Mona Sans Condensed Black', sans-serif;
     color: #f5d604;
     font-size: 15em;
-    margin-right: 20px;
-    text-align: center;
     line-height: 0.8em;
+    margin: 0;
 }
 
 .avatar {
     height: 250px;
+    margin-left: 20px;
 }
+
+.top-left {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.resume-button {
+    background-color: transparent;
+    border: 2px solid #E4DED7;
+    color: #E4DED7;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Mona Sans', sans-serif;
+    cursor: pointer;
+}
+
+.top-right {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.social-link {
+    color: #E4DED7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.bottom-left {
+    text-align: left;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+    line-height: 1.5em;
+    font-family: 'Mona Sans Expanded Bold', sans-serif;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: white;
+    line-height: 1.5em;
+    font-family: 'Mona Sans Expanded Bold', sans-serif;
+    text-align: right;
+}
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 12em;
+    }
+
+    .avatar {
+        height: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 10em;
+    }
+
+    .avatar {
+        height: 150px;
+    }
+}
+
+
+
 
