@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+
+.fixed-navbar {
+    font-family: 'Syne', sans-serif;
+    position: fixed;
+    bottom: 8%;
+    left: 32%;
+    right: 32%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-color: #09090D;
+    color: #E4DED7;
+    font-weight: 500;
+}
+
+.fixed-navbar a {
+    color: #E4DED7;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.fixed-navbar svg {
+    margin-right: 10px;
+}

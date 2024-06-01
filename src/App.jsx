@@ -2,8 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Preloader from './Preloader';
 import './homepage.css';
+import './navbar.css';
 import './fonts.css';
 import initializeBlobity from './blobityConfig';
+import { FaFilePdf } from "react-icons/fa6";
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -13,6 +16,7 @@ const App = () => {
   const avatarRef = useRef(null);
   const bottomLeftRef = useRef(null);
   const bottomRightRef = useRef(null);
+  const navbarRef = useRef(null);
 
   const handlePreloaderEnd = () => {
     setLoading(false);
@@ -33,6 +37,11 @@ const App = () => {
       gsap.fromTo([bottomLeftRef.current, bottomRightRef.current],
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.8, stagger: 0.2 }
+      );
+
+      gsap.fromTo(navbarRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 1.2 }
       );
 
       // Initialize Blobity using the setup function
@@ -68,6 +77,16 @@ const App = () => {
                   <p>Dedicated to crafting immersive video <br />edits and engaging front-end <br />experiences.</p>
                 </div>
               </section>
+              <nav className="fixed-navbar" ref={navbarRef}>
+                <a href="-" target="_blank" >
+                  <FaFilePdf />
+                </a>
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+              </nav>
+              <section></section>
             </div>
         )}
       </div>
