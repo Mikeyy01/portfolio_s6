@@ -36,6 +36,12 @@ h1 {
 .avatar {
     height: 250px;
     margin-left: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.avatar:hover {
+    filter: grayscale(0%);
 }
 
 .top-left {
