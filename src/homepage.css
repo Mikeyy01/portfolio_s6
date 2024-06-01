@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.section1 {
+    display: flex;
+    object-fit: cover;
+    height: 100%;
+    justify-content: center;
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
