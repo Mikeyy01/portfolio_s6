@@ -1,15 +1,38 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
+.port{
+    background-color: #09090D;
+}
 
 .section1 {
     display: flex;
-    object-fit: cover;
-    height: 100%;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
     background-image: url('/images/hero.jpg');
     background-size: cover;
     background-position: center;
 }
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Mona Sans Condensed Black', sans-serif;
+    color: #f5d604;
+    font-size: 15em;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 0.8em;
+}
+
+.avatar {
+    height: 250px;
+}
+

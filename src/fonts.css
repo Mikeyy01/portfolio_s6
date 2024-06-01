@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('./assets/fonts/MonaSans[slnt,wdth,wght].woff2') format('woff2-variations');
+    font-weight: 100 900;  /* Adjust the range based on your font's actual weight values */
+    font-stretch: 50% 150%;  /* Adjust the range based on your font's actual stretch values */
+    font-style: oblique 0deg 12deg; /* Include slant/italic variations if needed */
+}
+
+@font-face {
+    font-family: 'Mona Sans Condensed Black';
+    src: url('./assets/fonts/MonaSansCondensed-Black.woff2') format('woff2');
+    font-weight: 900; /* Specify the correct weight for the Black variant */
+    font-style: normal;
+}
