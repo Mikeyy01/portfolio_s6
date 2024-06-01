@@ -47,8 +47,8 @@ npm run dev
 - [X] ~~Create Language Onboarding Screen~~
 - [X] Homepage
 - [X] Favicon
-- [ ] Fixed Position NavBar
-- [ ] 404 Error Page
+- [X] Fixed Position NavBar
+- [X] 404 Error Page
 - [ ] Responsive Design
 - [X] Utilize Blobbity
 - [ ] Implement Smooth Scrolling
