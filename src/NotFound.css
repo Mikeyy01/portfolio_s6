@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
+
+.not-found {
+    color: #E4DED7 !important;
+    font-family: 'Syne', sans-serif !important;
+    background-color: #0E1016 !important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.not-found .error-image {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.not-found h2 {
+    font-size: 3em !important;
+    margin: 10px 0 20px 0 !important;
+}
+
+.not-found .home-button {
+    padding: 10px 20px;
+    border: 2px solid #E4DED7 !important;
+    color: #E4DED7;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .not-found-content {
+        flex-direction: column;
+    }
+
+    .not-found .error-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
