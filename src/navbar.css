@@ -2,6 +2,7 @@
 
 
 .fixed-navbar {
+    z-index: 1000;
     font-family: 'Syne', sans-serif;
     position: fixed;
     bottom: 8%;
