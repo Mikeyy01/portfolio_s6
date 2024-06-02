@@ -51,7 +51,7 @@ npm run dev
 - [X] ~~404 Error Page~~
 - [ ] Responsive Design
 - [X] ~~Utilize Blobbity~~
-- [ ] Implement Smooth Scrolling
+- [X] ~~Implement Smooth Scrolling~~
 - [x] ~~Implement GSAP~~
 - [ ] Link Buttons with External Content
 - [ ] Implement a Contact Form
