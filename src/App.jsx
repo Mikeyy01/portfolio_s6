@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Preloader from './Preloader';
-import NotFound from './NotFound';
 import './homepage.css';
 import './navbar.css';
 import './fonts.css';
@@ -36,27 +34,29 @@ const App = () => {
   };
 
   useEffect(() => {
-    gsap.fromTo(sectionRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
-    );
+    if (!loading) {
+      gsap.fromTo(sectionRef.current,
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+      );
 
-    gsap.fromTo([headingRef.current, avatarRef.current],
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.4, stagger: 0.2 }
-    );
+      gsap.fromTo([headingRef.current, avatarRef.current],
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.4, stagger: 0.2 }
+      );
 
-    gsap.fromTo([bottomLeftRef.current, bottomRightRef.current],
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.8, stagger: 0.2 }
-    );
+      gsap.fromTo([bottomLeftRef.current, bottomRightRef.current],
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.8, stagger: 0.2 }
+      );
 
-    gsap.fromTo(navbarRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 1.2 }
-    );
+      gsap.fromTo(navbarRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 1.2 }
+      );
 
-    const blobity = initializeBlobity();
+      // Initialize Blobity using the setup function
+      const blobity = initializeBlobity();
 
       ScrollTrigger.create({
         trigger: section2Ref.current,
@@ -131,50 +131,6 @@ const App = () => {
             </div>
         )}
       </div>
-  );
-};
-
-const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [isValidPath, setIsValidPath] = useState(true);
-
-  const handlePreloaderEnd = () => {
-    setLoading(false);
-  };
-
-  const ValidRoutes = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-      const validPaths = ['/', '/home', '/projects', '/about', '/contact'];
-      if (!validPaths.includes(location.pathname)) {
-        setIsValidPath(false);
-      } else {
-        setIsValidPath(true);
-      }
-    }, [location.pathname]);
-
-    return null;
-  };
-
-  return (
-      <Router>
-        <ValidRoutes />
-        <div className="port" style={{ height: '100vh' }}>
-          {loading && isValidPath && <Preloader onEnd={handlePreloaderEnd} />}
-          {!loading && isValidPath && (
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-          )}
-          {!isValidPath && (
-              <Routes>
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-          )}
-        </div>
-      </Router>
   );
 };
 
