@@ -1,22 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Preloader from './Preloader';
 import './homepage.css';
 import './navbar.css';
 import './fonts.css';
 import initializeBlobity from './blobityConfig';
-import { FaFilePdf } from "react-icons/fa6";
+import { FaFilePdf, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { TbMovie } from "react-icons/tb";
+import { GiOpenBook } from "react-icons/gi";
+import videoPort from './images/VideoPort.png';
+import laptopBg from './images/LaptopBG.png';
 
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const contentRef = useRef(null);
   const sectionRef = useRef(null);
+  const section2Ref = useRef(null);
   const headingRef = useRef(null);
   const avatarRef = useRef(null);
   const bottomLeftRef = useRef(null);
   const bottomRightRef = useRef(null);
   const navbarRef = useRef(null);
+
+  const laptopImgRef = useRef(null);
+  const projectInfoRef = useRef(null);
+  const projectIconsRef = useRef(null);
 
   const handlePreloaderEnd = () => {
     setLoading(false);
@@ -47,8 +58,20 @@ const App = () => {
       // Initialize Blobity using the setup function
       const blobity = initializeBlobity();
 
+      ScrollTrigger.create({
+        trigger: section2Ref.current,
+        start: "top 80%",
+        onEnter: () => {
+          gsap.fromTo([laptopImgRef.current, projectInfoRef.current, projectIconsRef.current],
+              { opacity: 0, y: 50 },
+              { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
+          );
+        },
+      });
+
       return () => {
         blobity.destroy();
+        ScrollTrigger.kill();
       };
     }
   }, [loading]);
@@ -86,7 +109,25 @@ const App = () => {
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
               </nav>
-              <section></section>
+              <section className="section2" ref={section2Ref}>
+                <div className="laptop-background" ref={laptopImgRef}>
+                  <img src={laptopBg} alt="Laptop background" className="laptop-bg"/>
+                  <img src={videoPort} alt="Portfolio on laptop" className="video-port"/>
+                </div>
+                <div className="project-info" ref={projectInfoRef}>
+                  <div className="project-icons" ref={projectIconsRef}>
+                    <div className="icon-circle" data-blobity><FaGithub /></div>
+                    <div className="icon-circle" data-blobity><TbMovie /></div>
+                    <div className="icon-circle" data-blobity><GiOpenBook /></div>
+                    <div className="icon-circle" data-blobity><FaExternalLinkAlt /></div>
+                  </div>
+                  <div className="project-details">
+                    <h2>Video Portfolio</h2>
+                    <p>Personal Portfolio showcasing videos I've edited.</p>
+                    <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
+                  </div>
+                </div>
+              </section>
             </div>
         )}
       </div>
