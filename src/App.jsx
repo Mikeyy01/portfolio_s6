@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
+import { Link } from 'react-scroll';
 import Preloader from './Preloader';
 import './homepage.css';
 import './navbar.css';
@@ -13,6 +15,19 @@ import videoPort from './images/VideoPort.png';
 import laptopBg from './images/LaptopBG.png';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const lenis = new Lenis();
+
+lenis.on('scroll', (e) => {
+  //onsole.log(e)
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -55,7 +70,7 @@ const App = () => {
           { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 1.2 }
       );
 
-      // Initialize Blobity using the setup function
+      // Initializing Blobity
       const blobity = initializeBlobity();
 
       ScrollTrigger.create({
@@ -104,8 +119,8 @@ const App = () => {
                 <a href="-" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
+                <Link to="section1" smooth={true} duration={1000}>Home</Link>
+                <Link to="section2" smooth={true} duration={1000}>Projects</Link>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
               </nav>
