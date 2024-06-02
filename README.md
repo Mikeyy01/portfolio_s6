@@ -45,12 +45,12 @@ npm run dev
 
 ## ToDo List
 - [X] ~~Create Language Onboarding Screen~~
-- [X] Homepage
-- [X] Favicon
-- [ ] Fixed Position NavBar
-- [ ] 404 Error Page
+- [X] ~~Homepage~~
+- [X] ~~Favicon~~
+- [X] ~~Fixed Position NavBar~~
+- [X] ~~404 Error Page~~
 - [ ] Responsive Design
-- [X] Utilize Blobbity
+- [X] ~~Utilize Blobbity~~
 - [ ] Implement Smooth Scrolling
 - [x] ~~Implement GSAP~~
 - [ ] Link Buttons with External Content
@@ -58,7 +58,7 @@ npm run dev
 - [ ] Project Sections
 - [ ] About Me
 - [ ] JSON Text Import
-- [X] Website Thumbnail (When sharing website)
+- [X] ~~Website Thumbnail (When sharing website)~~
 - [ ] Website Hosting
 
 
