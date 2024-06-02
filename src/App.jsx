@@ -101,7 +101,7 @@ const App = () => {
                 </div>
               </section>
               <nav className="fixed-navbar" ref={navbarRef}>
-                <a href="-" target="_blank" >
+                <a href="-" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
                 <a href="#home">Home</a>
